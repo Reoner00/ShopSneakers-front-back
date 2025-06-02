@@ -89,6 +89,9 @@ form#insert-form button {
 form#insert-form button:hover {
   background: #219150;
 }
+#insert-result.error {
+  color: #e74c3c;
+}
 
 #insert-result {
   text-align: center;

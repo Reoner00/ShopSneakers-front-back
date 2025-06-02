@@ -18,15 +18,23 @@ form.addEventListener("submit", async (e) => {
 
   if (!name) {
     resultDiv.textContent = "Name is required.";
+    resultDiv.classList.add("error");
     return;
   }
   if (isNaN(price) || price <= 0) {
-    resultDiv.textContent = "Price must be a positive number.";
+    resultDiv.textContent = "Price must be a more one dollar";
+    resultDiv.classList.add("error");
     return;
   }
   if (imageUrl && !isValidUrl(imageUrl)) {
     resultDiv.textContent =
       "Image URL must be a valid link to an image (jpg, png, gif, etc).";
+    resultDiv.classList.add("error");
+    return;
+  }
+  if (description.length < 9) {
+    resultDiv.textContent = "Description must be at least 9 characters.";
+    resultDiv.classList.add("error");
     return;
   }
 
