@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert Product</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="../img/favicon.jpg" />
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../main/index.html">Catalog products</a></li>
+        <li><a href="../insertItem/index.html">Insert Product</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <div class="title">
+      <h1>Insert Product</h1>
+    </div>
+    <form id="insert-form">
+      <input type="text" id="name" placeholder="Name" required /><br />
+      <input type="number" id="price" placeholder="Price" required /><br />
+      <input type="text" id="imageUrl" placeholder="Image URL" /><br />
+      <textarea id="description" placeholder="Description"></textarea><br />
+      <button type="submit">Add Product</button>
+    </form>
+    <div id="insert-result" style="text-align: center; margin-top: 1rem"></div>
+    <script src="insert.js"></script>
+  </body>
+</html>

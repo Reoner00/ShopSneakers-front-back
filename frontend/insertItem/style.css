@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Monsterrat;
+}
+body {
+  background: #f6f7fb;
+}
+
+@font-face {
+  font-family: Monsterrat;
+  src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+header {
+  width: 100%;
+  background: linear-gradient(90deg, #232526 0%, #414345 100%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  padding: 1.5rem 0.8rem;
+}
+header nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.3rem;
+  transition: color 0.2s, text-shadow 0.2s;
+  padding: 0.2em 0.5em;
+  border-radius: 6px;
+}
+header nav ul li a:hover {
+  color: #ffd700;
+  background: rgba(255, 255, 255, 0.07);
+  text-shadow: 0 2px 8px #0002;
+}
+.title {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+form#insert-form {
+  max-width: 450px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+form#insert-form input,
+form#insert-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.2rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border 0.2s;
+  resize: none;
+}
+form#insert-form input:focus,
+form#insert-form textarea:focus {
+  border: 1.5px solid #27ae60;
+  outline: none;
+}
+form#insert-form button {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 1.5rem;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+form#insert-form button:hover {
+  background: #219150;
+}
+
+#insert-result {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.1em;
+  color: #27ae60;
+}
