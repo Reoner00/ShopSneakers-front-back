@@ -1,6 +1,6 @@
 import Item from "../models/itemModel.js";
 
-export const getAllItems = async (req, res) => {
+export const GET_ALL = async (req, res) => {
   try {
     const items = await Item.find();
     res.json(items);
@@ -9,7 +9,7 @@ export const getAllItems = async (req, res) => {
   }
 };
 
-export const getItemById = async (req, res) => {
+export const GET_BY_ID = async (req, res) => {
   try {
     const item = await Item.findById(req.params.id);
     if (!item) return res.status(404).json({ message: "Item not found" });
@@ -19,7 +19,7 @@ export const getItemById = async (req, res) => {
   }
 };
 
-export const getItemsSortedByHighPrice = async (req, res) => {
+export const GET_SORTED = async (req, res) => {
   try {
     const sortedItems = await Item.find().sort({ price: -1 });
     res.json(sortedItems);
@@ -28,7 +28,7 @@ export const getItemsSortedByHighPrice = async (req, res) => {
   }
 };
 
-export const addItem = async (req, res) => {
+export const INSERT = async (req, res) => {
   const { name, imageUrl, description, price } = req.body;
   if (!name || price == null) {
     return res.status(400).json({ message: "Name and price are required" });
@@ -44,7 +44,7 @@ export const addItem = async (req, res) => {
   }
 };
 
-export const updateItem = async (req, res) => {
+export const UPDATE_BY_ID = async (req, res) => {
   try {
     const updated = await Item.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -59,7 +59,7 @@ export const updateItem = async (req, res) => {
   }
 };
 
-export const deleteItem = async (req, res) => {
+export const DELETE_BY_ID = async (req, res) => {
   try {
     const deleted = await Item.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ message: "Item not found" });

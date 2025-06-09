@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import itemRoutes from "./routes/itemRoutes.js";
+import itemRoutes from "./routes/item.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -25,11 +25,17 @@ mongoose
     process.exit(1);
   });
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.status(200).json({ message: "good" });
 });
 
-app.use("/", itemRoutes);
+app.use("/item", itemRoutes);
+
+app.use((_req, res) => {
+  return res.status(400).json({
+    message: "This endpoit does not exist",
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
